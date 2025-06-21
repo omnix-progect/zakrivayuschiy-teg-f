@@ -150,10 +150,30 @@
 
 .card__icon-button {
   padding: 0;
-  inline-size: 27px;
   background-color: transparent;
   border: none;
   cursor: pointer;
+  block-size: 38px;
+  border: 2px solid transparent;
+}
+
+.card__icon-button:hover .core{
+  fill: var(--contour-color);
+  transition: fill 0.3s ease-out;
+}
+
+.card__icon-button:hover .main-body{
+  fill: var(--contour-color);
+  transition: fill 0.3s ease-out 0.05s;
+}
+
+.card__icon-button:focus {
+  outline: none;
+}
+
+.card__icon-button:focus-visible {
+  border: 2px solid var(--main-color);
+  transition: border 0.3s ease;
 }
 
 .like-icon {
@@ -169,7 +189,7 @@
   padding: 9px 17px;
   border: 2px solid var(--main-color);
   cursor: pointer;
-  height: 38px;
+  block-size: 38px;
   position: relative;
   overflow: hidden;
   isolation: isolate;
@@ -250,6 +270,7 @@
 
 .save svg {
   inline-size: 21px;
+  mix-blend-mode: difference;
 }
 
 dialog[open] {
@@ -297,7 +318,7 @@ dialog::backdrop {
   background-color: var(--bg-color);
 }
 
-.submit span{
+.submit span {
   mix-blend-mode: difference;
 }
 
@@ -327,4 +348,23 @@ dialog::backdrop {
 
 .filter_seven {
   filter: blur(2px) hue-rotate(90deg) contrast(0.5);
+}
+
+.core{
+  fill: none;
+  transition: all 0.03s ease-out;
+}
+
+.main-body{
+  fill: none;
+  transition: all 0.03s ease-out;
+}
+
+.contour {
+  fill: var(--contour-color);
+}
+
+.sparks {
+  fill: var(--animation-fill-color);
+  opacity: 0;
 }
