@@ -15,9 +15,7 @@
   min-block-size: 100dvb;
   font-family: var(--main-font);
   font-variation-settings: "wght" 400;
-  background-image: url(../images/background.png);
-  background-repeat: no-repeat;
-  background-position: center;
+  background-image: var(--bg-image);
   background-attachment: fixed;
   background-size: cover;
 }
@@ -81,6 +79,8 @@
   flex-direction: row;
   flex-wrap: nowrap;
   padding: 4px 24px 6px 10px;
+  border-bottom: 2px solid var(--main-color);
+  background-color: var(--bg-color);
 }
 
 .card_title h3 {
@@ -91,17 +91,21 @@
 
 .picture {
   position: relative;
+  overflow: hidden;
 }
 
 .picture img {
   position: relative;
   inline-size: 100%;
+  block-size: 100%;
+  object-fit: cover;
+  display: block;
 }
 
 .label {
   position: absolute;
   text-transform: uppercase;
-  right: 11px;
+  right: 25px;
   top: 25px;
   font-size: 14px;
   font-weight: var(--main-font-weight);
@@ -132,6 +136,7 @@
   font-size: 18px;
   font-variation-settings: "wght" var(--max-width-content);
   line-height: 21px;
+  border-top: 2px solid var(--main-color);
 }
 
 .communication {
@@ -162,13 +167,43 @@
   align-items: center;
   justify-content: center;
   padding: 9px 17px;
-  background: none;
   border: 2px solid var(--main-color);
   cursor: pointer;
   height: 38px;
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+  color: var(--color);
+  background-color: var(--bg-color);
+}
+
+.card__like-button::before,
+.save:before,
+.submit:before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  translate: -100% 0%;
+  background-color: var(--main-color);
+  transition: translate 0.5s ease-in-out;
+}
+
+.card__like-button:hover::before,
+.save:hover::before,
+.submit:hover::before {
+  translate: 0;
+}
+
+.card__like-button:focus,
+.save:focus,
+.submit:focus {
+  outline: none;
+  box-shadow: 2px 2px 0px var(--main-color);
+  transition: box-shadow 0.3s ease;
 }
 
 .button__text {
+  mix-blend-mode: difference;
   font-family: var(--accent-font);
   font-size: 14px;
   font-weight: var(--main-font-weight);
@@ -189,28 +224,32 @@
   margin: 54px auto 102px;
 }
 
-.footer_conteiner span{
+.footer_conteiner span {
   font-size: 14px;
   font-family: var(--accent-font);
   font-weight: var(--main-font-weight);
-  color: var(--main-color);
+  mix-blend-mode: difference;
 }
 .save {
-  inline-size: 306px;
-  block-size: 80px;
+  inline-size: 335px;
+  block-size: 51px;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   align-items: center;
   justify-content: center;
   gap: 8px;
   background-color: var(--bg-color);
   border: 2px solid var(--main-color);
   padding: 0;
+  position: relative;
+  overflow: hidden;
+  color: var(--color);
+  background-color: var(--bg-color);
+  isolation: isolate;
 }
 
 .save svg {
-  inline-size: 28px;
-  block-size: 28px;
+  inline-size: 21px;
 }
 
 dialog[open] {
@@ -223,11 +262,12 @@ dialog[open] {
   max-inline-size: 357px;
 }
 
-dialog::backdrop{
+dialog::backdrop {
   opacity: 0.75;
   background-color: var(--main-color);
 }
-.dialog_modal{
+
+.dialog_modal {
   display: grid;
   align-items: center;
   grid-template-columns: 39px 1fr;
@@ -240,7 +280,7 @@ dialog::backdrop{
   font-weight: var(--main-font-weight);
 }
 
-.submit{
+.submit {
   display: flex;
   inline-size: 100%;
   align-items: center;
@@ -251,5 +291,40 @@ dialog::backdrop{
   font-family: var(--accent-font);
   text-transform: uppercase;
   cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  color: var(--color);
+  background-color: var(--bg-color);
 }
 
+.submit span{
+  mix-blend-mode: difference;
+}
+
+.filter_one {
+  filter: saturate(0.5);
+}
+
+.filter_two {
+  filter: saturate(4.5);
+}
+
+.filter_tree {
+  filter: hue-rotate(45deg);
+}
+
+.filter_four {
+  filter: invert(1);
+}
+
+.filter_five {
+  filter: sepia(1);
+}
+
+.filter_six {
+  filter: blur(15px);
+}
+
+.filter_seven {
+  filter: blur(2px) hue-rotate(90deg) contrast(0.5);
+}

@@ -26,7 +26,7 @@
           <h3>Фритрек и нулевой спринт: Подготовка к работе</h3>
         </div>
         <div class="picture">
-          <img src="./images/car.png" alt="машина" />
+          <img src="./images/car.png" alt="машина" class="no_filter" />
           <div class="label">идеи?</div>
         </div>
         <div class="card_text">
@@ -56,7 +56,7 @@
           <h3>1 спринт: Я — чистый лист</h3>
         </div>
         <div class="picture">
-          <img src="./images/car.png" alt="машина" />
+          <img src="./images/car.png" alt="машина" class="filter_one" />
           <div class="label">сомнения</div>
         </div>
         <div class="card_text">
@@ -88,7 +88,7 @@
           <h3>1 спринт: А если не получится?</h3>
         </div>
         <div class="picture">
-          <img src="./images/car.png" alt="машина" />
+          <img src="./images/car.png" alt="машина" class="filter_two" />
           <div class="label">Радость</div>
         </div>
         <div class="card_text">
@@ -118,7 +118,7 @@
           <h3>2 спринт: Погоня за идеалом</h3>
         </div>
         <div class="picture">
-          <img src="./images/car.png" alt="машина" />
+          <img src="./images/car.png" alt="машина" class="filter_tree" />
           <div class="label">осознание</div>
         </div>
         <div class="card_text">
@@ -151,7 +151,7 @@
           <h3>2 спринт: О тех, кто рядом</h3>
         </div>
         <div class="picture">
-          <img src="./images/car.png" alt="машина" />
+          <img src="./images/car.png" alt="машина" class="filter_four" />
           <div class="label">Нас много</div>
         </div>
         <div class="card_text">
@@ -185,7 +185,7 @@
           <h3>3 спринт: Обходные стратегии</h3>
         </div>
         <div class="picture">
-          <img src="./images/car.png" alt="машина" />
+          <img src="./images/car.png" alt="машина" class="filter_five" />
           <div class="label">нервозность</div>
         </div>
         <div class="card_text">
@@ -217,7 +217,7 @@
           <h3>3 спринт: Когда опускаются руки</h3>
         </div>
         <div class="picture">
-          <img src="./images/car.png" alt="машина" />
+          <img src="./images/car.png" alt="машина" class="filter_six" />
           <div class="label">мотивация</div>
         </div>
         <div class="card_text">
@@ -250,7 +250,7 @@
           <h3>«Сейчас я здесь»</h3>
         </div>
         <div class="picture">
-          <img src="./images/car.png" alt="машина" />
+          <img src="./images/car.png" alt="машина" class="filter_seven" />
           <div class="label">спокойствие</div>
         </div>
         <div class="card_text">
@@ -288,14 +288,14 @@
           aria-controls="dialog"
           type="button"
         >
-          <svg class="" viewBox="0 0 40 40">
+          <svg class="" viewBox="0 0 29 28">
             <use href="./svg/floppy.svg#floppy" />
           </svg>
           <span>Сохранить на память</span>
         </button>
         <dialog id="dialog">
           <div class="dialog_modal">
-            <svg class="" viewBox="0 0 40 40">
+            <svg class="" viewBox="0 0 29 28">
               <use href="./svg/floppy.svg#floppy" />
             </svg>
             <p>Вставьте дискету, чтобы продолжить</p>
@@ -305,7 +305,9 @@
             onclick="window['dialog'].close()"
             aria-controls="dialog"
             type="button"
-          >ок</button>
+          >
+            <span>ок</span>
+          </button>
         </dialog>
       </div>
     </footer>
