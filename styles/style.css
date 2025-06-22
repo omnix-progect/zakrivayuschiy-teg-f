@@ -38,7 +38,7 @@
   padding: clamp(7.5rem, 0.751vw + 7.324rem, 8rem)
     clamp(0.875rem, 9.953vw - 1.458rem, 7.5rem);
   background-color: var(--bg-color);
-  margin: 102px 0px 107px;
+  margin: 102px 0px 100px;
   border: 2px solid var(--main-color);
   display: flex;
   flex-direction: column;
@@ -128,7 +128,7 @@
 .card_text {
   padding: 25px;
   display: flex;
-  gap: 25px;
+  gap: 28px;
   flex-direction: column;
   flex-wrap: nowrap;
   justify-content: center;
@@ -145,7 +145,7 @@
   align-items: center;
   flex-direction: row;
   justify-content: flex-end;
-  gap: 12px;
+  gap: 3px;
 }
 
 .card__icon-button {
@@ -155,16 +155,6 @@
   cursor: pointer;
   block-size: 38px;
   border: 2px solid transparent;
-}
-
-.card__icon-button:hover .core{
-  fill: var(--contour-color);
-  transition: fill 0.3s ease-out;
-}
-
-.card__icon-button:hover .main-body{
-  fill: var(--contour-color);
-  transition: fill 0.3s ease-out 0.05s;
 }
 
 .card__icon-button:focus {
@@ -241,7 +231,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  margin: 54px auto 102px;
+  margin: 50px auto 102px;
 }
 
 .footer_conteiner span {
@@ -250,6 +240,7 @@
   font-weight: var(--main-font-weight);
   mix-blend-mode: difference;
 }
+
 .save {
   inline-size: 335px;
   block-size: 51px;
@@ -281,6 +272,10 @@ dialog[open] {
   justify-content: center;
   gap: 30px;
   max-inline-size: 357px;
+}
+
+dialog[open] .submit {
+  box-shadow: none;
 }
 
 dialog::backdrop {
@@ -335,7 +330,7 @@ dialog::backdrop {
 }
 
 .filter_four {
-  filter: invert(1);
+  filter: invert(1) contrast(0.5);
 }
 
 .filter_five {
@@ -350,21 +345,129 @@ dialog::backdrop {
   filter: blur(2px) hue-rotate(90deg) contrast(0.5);
 }
 
-.core{
-  fill: none;
-  transition: all 0.03s ease-out;
+.like-icon .core,
+.like-icon .main-body {
+  fill: transparent;
+  transition: fill 0.3s ease-in;
 }
 
-.main-body{
-  fill: none;
-  transition: all 0.03s ease-out;
-}
-
-.contour {
+.card__icon-button:hover .like-icon .core {
   fill: var(--contour-color);
+  transition: fill 0.3s ease-in;
+}
+
+.card__icon-button:active .like-icon .core {
+  fill: var(--animation-fill-color);
+  transition: fill 0.3s ease-in;
+}
+
+.card__icon-button .like-icon .core {
+  transition: fill 0.3s ease-out 0.03s;
+}
+
+.card__icon-button:hover .like-icon.is-liked .core,
+.card__icon-button:hover .like-icon.is-liked .main-body {
+  fill: var(--animation-fill-color);
+}
+
+.like-icon.is-liked .core {
+  fill: var(--animation-fill-color);
+  transition: fill 0.3s ease-in 0.06s;
+}
+
+.card__icon-button:hover .like-icon .main-body {
+  fill: var(--contour-color);
+  transition: fill 0.3s ease-in 0.05s;
+}
+
+.card__icon-button:active .like-icon .main-body {
+  fill: var(--animation-fill-color);
+  transition: fill 0.3s ease-in 0.05s;
+}
+
+.card__icon-button .like-icon .main-body {
+  transition: fill 0.3s ease-out;
+}
+
+.like-icon.is-liked .main-body {
+  fill: var(--animation-fill-color);
+  transition: fill 0.3s ease-in 0.06s;
+}
+
+.like-icon .contour {
+  fill: var(--contour-color);
+  transition: fill 0.1s linear;
+}
+
+.card__icon-button:active .like-icon .contour {
+  fill: var(--contour-color);
+  transition: fill 0.3s ease-in 0.06s;
 }
 
 .sparks {
   fill: var(--animation-fill-color);
   opacity: 0;
+}
+
+.like-icon.is-liked .contour {
+  fill: var(--animation-fill-color);
+  transition: fill 0.3s ease-in 0.06s;
+}
+
+.like-icon.is-liked .heart {
+  animation: scale;
+  animation-delay: 0.1s;
+  animation-duration: 0.3s;
+  animation-timing-function: ease-in;
+  animation-iteration-count: none;
+  transform-origin: center;
+}
+
+.like-icon.is-liked .sparks {
+  animation: sparks;
+  animation-delay: 0.3s;
+  animation-duration: 0.3s;
+  animation-timing-function: ease-in;
+  animation-iteration-count: none;
+  transform-origin: center;
+}
+
+@keyframes scale {
+  from {
+    scale: 1;
+  }
+
+  to {
+    scale: 1.25;
+  }
+}
+
+@keyframes sparks {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@media (width <=375px) {
+  .label {
+    right: 11px;
+  }
+
+  .card_text {
+    gap: 26px;
+  }
+
+  .save {
+    block-size: 80px;
+    inline-size: 306px;
+    flex-direction: column;
+  }
+
+  .save svg {
+    inline-size: 28px;
+  }
 }
