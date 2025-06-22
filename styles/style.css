@@ -13,7 +13,7 @@
 .page {
   min-inline-size: 320px;
   min-block-size: 100dvb;
-  font-family: var(--main-font);
+  font-family: var(--main-font),sans-serif;
   font-variation-settings: "wght" 400;
   background-image: var(--bg-image);
   background-attachment: fixed;
@@ -109,7 +109,7 @@
   top: 25px;
   font-size: 14px;
   font-weight: var(--main-font-weight);
-  font-family: var(--accent-font);
+  font-family: var(--accent-font),sans-serif;
   mix-blend-mode: hard-light;
   opacity: 0.5;
   text-shadow: 1px 1px 0 var(--bg-color), -1px 1px 0 var(--bg-color),
@@ -213,7 +213,7 @@
 
 .button__text {
   mix-blend-mode: difference;
-  font-family: var(--accent-font);
+  font-family: var(--accent-font),sans-serif;
   font-size: 14px;
   font-weight: var(--main-font-weight);
 }
@@ -235,7 +235,7 @@
 
 .footer_conteiner span {
   font-size: 14px;
-  font-family: var(--accent-font);
+  font-family: var(--accent-font),sans-serif;
   font-weight: var(--main-font-weight);
   mix-blend-mode: difference;
 }
@@ -288,7 +288,7 @@ dialog::backdrop {
   gap: 20px;
   font-size: 14px;
   text-transform: uppercase;
-  font-family: var(--accent-font);
+  font-family: var(--accent-font),sans-serif;
   line-height: 150%;
   color: var(--main-color);
   font-weight: var(--main-font-weight);
@@ -301,7 +301,7 @@ dialog::backdrop {
   justify-content: center;
   border: 2px solid var(--main-color);
   padding: 9px 17px;
-  font-family: var(--accent-font);
+  font-family: var(--accent-font),sans-serif;
   text-transform: uppercase;
   cursor: pointer;
   position: relative;
