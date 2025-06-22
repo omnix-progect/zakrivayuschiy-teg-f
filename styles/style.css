@@ -151,7 +151,6 @@
 .card__icon-button {
   padding: 0;
   background-color: transparent;
-  border: none;
   cursor: pointer;
   block-size: 38px;
   border: 2px solid transparent;
@@ -255,7 +254,6 @@
   position: relative;
   overflow: hidden;
   color: var(--color);
-  background-color: var(--bg-color);
   isolation: isolate;
 }
 
@@ -301,7 +299,6 @@ dialog::backdrop {
   inline-size: 100%;
   align-items: center;
   justify-content: center;
-  background-color: transparent;
   border: 2px solid var(--main-color);
   padding: 9px 17px;
   font-family: var(--accent-font);
