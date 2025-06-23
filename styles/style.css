@@ -72,18 +72,17 @@
 }
 
 .card_title {
-  min-block-size: 31px;
   display: flex;
   align-items: center;
   justify-content: flex-start;
   flex-direction: row;
   flex-wrap: nowrap;
-  padding: 4px 24px 6px 10px;
+  padding: 3px 24px 5px 10px;
   border-bottom: 2px solid var(--main-color);
   background-color: var(--bg-color);
 }
 
-.card_title h3 {
+.card_title h2 {
   color: var(--main-color);
   font-size: 18px;
   font-variation-settings: "wght" var(--card-title-font-weight);
@@ -154,6 +153,7 @@
   cursor: pointer;
   block-size: 38px;
   border: 2px solid transparent;
+  transition: border 0.3s ease;
 }
 
 .card__icon-button:focus {
@@ -162,7 +162,6 @@
 
 .card__icon-button:focus-visible {
   border: 2px solid var(--main-color);
-  transition: border 0.3s ease;
 }
 
 .like-icon {
@@ -186,9 +185,11 @@
   background-color: var(--bg-color);
 }
 
-.card__like-button::before,
-.save:before,
-.submit:before {
+.button{
+  transition: box-shadow 0.3s ease;
+}
+
+.button::before {
   content: "";
   position: absolute;
   inset: 0;
@@ -197,18 +198,13 @@
   transition: translate 0.5s ease-in-out;
 }
 
-.card__like-button:hover::before,
-.save:hover::before,
-.submit:hover::before {
+.button:hover::before {
   translate: 0;
 }
 
-.card__like-button:focus,
-.save:focus,
-.submit:focus {
+.button:focus {
   outline: none;
   box-shadow: 2px 2px 0px var(--main-color);
-  transition: box-shadow 0.3s ease;
 }
 
 .button__text {
@@ -218,22 +214,14 @@
   font-weight: var(--main-font-weight);
 }
 
-.footer {
-  inline-size: 100%;
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
-  align-items: center;
-}
-
-.footer_conteiner {
+.save_conteiner {
   display: flex;
   align-items: center;
   justify-content: center;
-  margin: 50px auto 102px;
+  margin: 0px auto 102px;
 }
 
-.footer_conteiner span {
+.save_conteiner span {
   font-size: 14px;
   font-family: var(--accent-font),sans-serif;
   font-weight: var(--main-font-weight);
@@ -314,31 +302,31 @@ dialog::backdrop {
   mix-blend-mode: difference;
 }
 
-.filter_one {
+.saturate_05 {
   filter: saturate(0.5);
 }
 
-.filter_two {
+.saturate_45 {
   filter: saturate(4.5);
 }
 
-.filter_tree {
+.hue-rotate {
   filter: hue-rotate(45deg);
 }
 
-.filter_four {
+.invert_contrast {
   filter: invert(1) contrast(0.5);
 }
 
-.filter_five {
+.sepia {
   filter: sepia(1);
 }
 
-.filter_six {
+.blur {
   filter: blur(15px);
 }
 
-.filter_seven {
+.blur_hue-rotate_contrast {
   filter: blur(2px) hue-rotate(90deg) contrast(0.5);
 }
 

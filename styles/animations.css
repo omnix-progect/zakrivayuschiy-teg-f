@@ -30,53 +30,44 @@
   }
 }
 
-.like-icon .core,
-.like-icon .main-body {
+.like-icon .core {
   fill: transparent;
-  transition: fill 0.3s ease-in;
+  transition: fill 0.3s ease 0.03s;
 }
 
-.card__icon-button:hover .like-icon .core {
+.card__icon-button:hover .core {
   fill: var(--contour-color);
-  transition: fill 0.3s ease-in;
+  transition: fill 0.3s ease;
 }
 
-.card__icon-button:active .like-icon .core {
+.card__icon-button:active .core {
   fill: var(--animation-fill-color);
-  transition: fill 0.3s ease-in;
-}
-
-.card__icon-button .like-icon .core {
-  transition: fill 0.3s ease-out 0.03s;
-}
-
-.card__icon-button:hover .like-icon.is-liked .core,
-.card__icon-button:hover .like-icon.is-liked .main-body {
-  fill: var(--animation-fill-color);
+  transition: fill 0.3s ease;
 }
 
 .like-icon.is-liked .core {
   fill: var(--animation-fill-color);
-  transition: fill 0.3s ease-in 0.06s;
+  transition: fill 0.3s ease 0.05s;
 }
 
-.card__icon-button:hover .like-icon .main-body {
+.like-icon .main-body {
+  fill: transparent;
+  transition: fill 0.3s ease;
+}
+
+.card__icon-button:hover .main-body {
   fill: var(--contour-color);
-  transition: fill 0.3s ease-in 0.05s;
+  transition: fill 0.3s ease 0.05s;
 }
 
-.card__icon-button:active .like-icon .main-body {
+.card__icon-button:active .main-body {
   fill: var(--animation-fill-color);
-  transition: fill 0.3s ease-in 0.05s;
-}
-
-.card__icon-button .like-icon .main-body {
-  transition: fill 0.3s ease-out;
+  transition: fill 0.3s ease 0.05s;
 }
 
 .like-icon.is-liked .main-body {
   fill: var(--animation-fill-color);
-  transition: fill 0.3s ease-in 0.06s;
+  transition: fill 0.3s ease 0.05s;
 }
 
 .like-icon .contour {
@@ -84,19 +75,14 @@
   transition: fill 0.1s linear;
 }
 
-.card__icon-button:active .like-icon .contour {
-  fill: var(--contour-color);
-  transition: fill 0.3s ease-in 0.06s;
-}
-
-.sparks {
-  fill: var(--animation-fill-color);
-  opacity: 0;
-}
-
 .like-icon.is-liked .contour {
   fill: var(--animation-fill-color);
-  transition: fill 0.3s ease-in 0.06s;
+  transition: fill 0.3s ease 0.06s;
+}
+
+.like-icon .sparks {
+  fill: var(--animation-fill-color);
+  opacity: 0;
 }
 
 .like-icon.is-liked .heart {
